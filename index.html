@@ -1,0 +1,30 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 video comparison</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+  <div class="player" id="video-compare-container">
+    <video id="right-video" poster="assets/videos/vasa/h264.png" muted>
+      <source src=assets/videos/vasa/h264.mp4>
+    </video>
+    <div id="video-clipper">
+      <video id="left-video" poster="assets/videos/vasa/h265.png" muted>
+        <source src=assets/videos/vasa/h265.mp4>
+      </video>
+    </div>
+    <div class="overlay" id="left-video-overlay" hidden></div>
+    <div class="overlay" id="right-video-overlay" hidden></div>
+    <div class="controls" id="controls">
+      <input class="control-button" id="rewind-button" type="image" src="assets/icons/rewind.svg" onclick="seekFrames(-1)"/>
+      <input class="control-button" id="play-pause-button" type="image" src="assets/icons/pause.svg" onclick="togglePlayPause()"/>
+      <input class="control-button" id="ff-button" type="image" src="assets/icons/fast-forward.svg" onclick="seekFrames(1)"/>
+    </div>
+  </div>
+  <script src="js/index.js"></script>
+</body>
+
+</html>

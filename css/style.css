@@ -1,0 +1,90 @@
+body {
+  background: #000000;
+  margin: 2rem;
+}
+
+.controls {
+  background-color: rgba(0, 0, 0, 0.50);
+  color: #eee;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1em;
+  border-radius: 5em;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+  transition-delay: 0;
+  z-index: 10000;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
+.player:hover .controls {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.player:not(:hover) .controls {
+  transition-delay: .5s;
+}
+
+.control-button {
+  width: 4%;
+  height: 4%;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+#left-video-overlay {
+  left: 0;
+  margin-left: 5%;
+}
+
+#right-video-overlay {
+  right: 0;
+  margin-right: 5%;
+}
+
+#video-compare-container {
+  display: inline-block;
+  line-height: 0;
+  position: relative;
+  width: 100%;
+  padding-top: 53%;
+}
+
+#video-compare-container > video {
+  width: 100%;
+  position: absolute;
+  top: 0; height: 100%;
+}
+
+#video-compare-container .overlay {
+  position: absolute;
+  font: normal 12px courier;
+  text-align: left;
+  color: white;
+  background: rgba(0, 0, 0, 0.50);
+  opacity: .6;
+  top: 1em;
+  z-index: 100;
+  padding: 0.5%;
+  border-radius: 5em;
+  overflow: hidden;
+}
+
+#video-clipper {
+  width: 100%; 
+  position: absolute;
+  top: 0; bottom: 0;
+  overflow: hidden;
+  border-right: 2px solid rgba(0, 0, 0, 0.50);
+}
+
+#video-clipper video {
+  width: 200%;
+  position: absolute;
+  height: 100%;
+}
