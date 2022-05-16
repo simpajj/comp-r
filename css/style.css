@@ -37,6 +37,10 @@ body {
   padding-right: 2%;
 }
 
+#left-video {
+  background-color: black;
+}
+
 #left-video-overlay {
   left: 0;
   margin-left: 5%;
@@ -76,7 +80,7 @@ body {
 }
 
 #video-clipper {
-  width: 100%; 
+  width: 100%;
   position: absolute;
   top: 0; bottom: 0;
   overflow: hidden;
@@ -87,4 +91,16 @@ body {
   width: 200%;
   position: absolute;
   height: 100%;
+}
+
+p {
+  position: fixed;
+  top: 0;
+  color: white;
+  z-index: 4;
+}
+
+#video-compare-container>p {
+  text-align: right;
+  right: 0;
 }

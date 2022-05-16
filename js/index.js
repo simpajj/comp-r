@@ -2,7 +2,9 @@ var videoContainer = document.getElementById("video-compare-container"),
     leftVideo = document.getElementById("left-video"),
     rightVideo = document.getElementById("right-video"),
     leftVideoOverlay = document.getElementById("left-video-overlay"),
-    rightVideoOverlay = document.getElementById("right-video-overlay");
+    rightVideoOverlay = document.getElementById("right-video-overlay"),
+    leftVideoLabel = document.getElementById("left-video-label"),
+    rightVideoLabel = document.getElementById("right-video-label");
 
 const FRAME_RATE = 25;
 const ICON_REPLAY = "assets/icons/replay.svg";
@@ -17,6 +19,10 @@ rightVideo.onpause = function () { syncPosition(0) }
 
 leftVideo.onplay = function () { syncPosition(0) }
 rightVideo.onplay = function () { syncPosition(0) }
+
+rightVideoLabel.innerHTML = document.getElementById("right-video").getElementsByTagName("source")[0].getAttribute('src');
+leftVideoLabel.innerHTML = document.getElementById("left-video").getElementsByTagName("source")[0].getAttribute('src');
+
 
 leftVideo.onended = function () {
     if (rightVideo.ended)
@@ -88,7 +94,7 @@ function syncVideoStart() {
 // see: http://www.inconduit.com/smpte/
 function seekFrames(nrOfFrames) {
     var playpause = document.getElementById("play-pause-button")
-    if (!leftVideo.paused) 
+    if (!leftVideo.paused)
         togglePause(playpause, leftVideo)
     if (!rightVideo.paused)
         togglePause(playpause, rightVideo);
